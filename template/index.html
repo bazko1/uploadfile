@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Single file upload</title>
+</head>
+
+<body>
+  <h1>Upload file</h1>
+
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    Name:  <input type="text" name="name" value="File Owner" required /><br>
+    Email: <input type="email" name="email" value="test@test.com" required /><br>
+    Files: <input type="file" name="file" required /><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Uploaded files:</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Owner</th>
+      <th>Email</th>
+    </tr>
+    {{range .}}
+    <tbody>
+      <tr>
+        <td> {{.ID}} </td>
+        <td> {{.Name}} </td>
+        <td> {{.UploadedBy}} </td>
+        <td> {{.Email}} </td>
+        <td> <a href="/api/v1/file/download/{{.ID}}" download="{{.Name}}">Download</a>
+        </td>
+      </tr>
+    </tbody>
+    {{end}}
+  </table>
+
+</body>
+
+</html>
