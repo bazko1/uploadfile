@@ -63,3 +63,9 @@ curl -u user:pass -X GET localhost:1323/api/v1/file
 ]
 
 ```
+
+### Download file by id
+This will return given file if found as blob application/octet-stream.
+```
+curl -X GET -u user:pass localhost:1323/api/v1/file/download/1 
+```
