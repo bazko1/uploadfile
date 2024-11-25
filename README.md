@@ -1,6 +1,6 @@
 ## Simple file storage service demo
 Stores given files in gorm handled db (currently sqlite) with memory caching and API for 
-retrieving file metadata.
+retrieving files metadata, one file at a time.
 
 ## Running
 To run default server <br>
@@ -14,7 +14,8 @@ To run all tests <br>
 ```
 
 ### Access main page UI to download or list files:
-`http://localhost:1323/`
+`http://localhost:1323/` <br>
+There is a screenshot of it at `./screenshot.png`
 
 
 ## API docs
